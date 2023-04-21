@@ -17,7 +17,13 @@
 
 module Problem2 where
 
-    fibonacci :: [Int] -> Int -> [Int]
-    fibonacci last limit = [last]
+    import Data.List
+    
+    fibonacci :: Int -> Int
+    fibonacci 0 = 0
+    fibonacci 1 = 1
+    fibonacci x = fibonacci (x-1) + fibonacci (x-2)
 
-    -- answer = sum (nub (multiples 3 1000 ++ multiples 5 1000))
+    fibonacciSequence limit = [fibonacci x | x <- [1..], fibonacci x < limit]
+
+    -- answer = sum (filter even (fibonacciSequence 4000000))
