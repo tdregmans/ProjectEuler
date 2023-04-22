@@ -19,11 +19,10 @@ module Problem2 where
 
     import Data.List
     
-    fibonacci :: Int -> Int
-    fibonacci 0 = 0
-    fibonacci 1 = 1
-    fibonacci x = fibonacci (x-1) + fibonacci (x-2)
+    fibonacci :: [Int]
+    fibonacci = 1 : 1 : zipWith (+) fibonacci (tail fibonacci)
 
-    fibonacciSequence limit = [fibonacci x | x <- [1..], fibonacci x < limit]
+    fibonacciSequence :: Int -> [Int]
+    fibonacciSequence limit = takeWhile (< limit) fibonacci 
 
     -- answer = sum (filter even (fibonacciSequence 4000000))
