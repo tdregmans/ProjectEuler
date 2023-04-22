@@ -2,7 +2,7 @@
     Problem2.hs
     Thijs Dregmans
     Project Euler: Problem 2
-    Last edited: 2023-04-21
+    Last edited: 2023-04-22
 --}
 
 {--
